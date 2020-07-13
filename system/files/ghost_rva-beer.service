@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost systemd service for blog: rva-beer
+Documentation=https://ghost.org/docs/
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/mati
+User=999
+Environment="NODE_ENV=production"
+ExecStart=/usr/bin/node /usr/bin/ghost run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
